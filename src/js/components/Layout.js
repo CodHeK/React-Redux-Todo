@@ -13,12 +13,21 @@ import md5 from 'md5';
 class Layout extends React.Component {
   constructor() {
     super();
+    this.state = {
+      error: "",
+    }
   }
 
   addTodo(e) {
     if(e.which === 13) {
       const TodoData = e.target.value;
-      this.props.dispatch(AddTodoAction(TodoData));
+      if(TodoData != "") {
+        this.props.dispatch(AddTodoAction(TodoData));
+        this.setState({ error: ""});
+      }
+      else {
+        this.setState({ error: "you can't do no-thing :p do something!"})
+      }
       e.target.value = "";
     }
   }
@@ -48,6 +57,8 @@ class Layout extends React.Component {
         <h5>(Click ENTER to add Todo & click on Todo to DELETE)</h5>
         <br />
         <input className="inp" onKeyPress={this.addTodo.bind(this)} />
+        <br />
+        <h5 className="err">{this.state.error}</h5>
         <hr />
         <ul className="list">{TodosMapped}</ul>
       </div>
