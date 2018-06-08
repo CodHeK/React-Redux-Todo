@@ -25,3 +25,8 @@
   width: 70%;
   margin-left: 15%;
 }
+
+.item:hover {
+  background-color: rgb(0, 0, 0, 0.15);
+  cursor: pointer;
+}
