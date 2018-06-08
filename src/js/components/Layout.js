@@ -34,7 +34,14 @@ class Layout extends React.Component {
 
   render() {
     const { todos } = this.props;
-    const TodosMapped = todos.map(eachTodo => <li className="item" key={eachTodo.id} onClick={this.deleteTodo.bind(this, eachTodo.data)}> <b>{eachTodo.data}</b> on <b>{eachTodo.date}</b></li>);
+    let TodosMapped = "";
+
+    if(todos.length === 0) {
+       TodosMapped = "You have no Todos to display :'(";
+    }
+    else {
+      TodosMapped = todos.map(eachTodo => <li className="item" key={eachTodo.id} onClick={this.deleteTodo.bind(this, eachTodo.data)}> <b>{eachTodo.data}</b> on <b>{eachTodo.date}</b></li>);
+    }
     return (
       <div className="mainDiv">
         <h1>Add a Todo</h1>
