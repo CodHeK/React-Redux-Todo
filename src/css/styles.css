@@ -1,0 +1,27 @@
+.mainDiv {
+  text-align: center;
+  padding-top: 10%;
+}
+
+.inp {
+  width: 40%;
+  height: 50px;
+  font-size: 30px;
+}
+
+.list {
+  list-style: none;
+  font-size: 30px;
+  text-align: center;
+}
+
+.item {
+  font-weight: 500;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 5px;
+  padding-top: 20px;
+  width: 70%;
+  margin-left: 15%;
+}
